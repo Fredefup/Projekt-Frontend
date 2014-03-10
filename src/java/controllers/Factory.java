@@ -6,13 +6,17 @@
 
 package controllers;
 
+import commands.AddAccountCommand;
 import commands.Command;
+import commands.EditAccountCommand;
+import commands.EditCustomerCommand;
 import commands.EditTransferCommand;
 import commands.ListAccountDetailCommand;
 import commands.ListAccountsCommand;
 import commands.ListCustomersCommand;
 import commands.LoginCommand;
 import commands.LogoutCommand;
+import commands.SaveCustomerCommand;
 import commands.ShowLoginCommand;
 import commands.TargetCommand;
 import commands.TransferCommand;
@@ -45,25 +49,25 @@ public class Factory
 	
 	Map<SecurityRole, String> roles = new HashMap();
 	roles.put(SecurityRole.Employee, "/employee/startEmployeePage.jsp");
-	roles.put(SecurityRole.SuperEmployee, "/superEmployee/addCustomer.jsp");
+	roles.put(SecurityRole.SuperEmployee, "/employee/startEmployeePage.jsp");
 	roles.put(SecurityRole.Customer, "/customer/startCustomerPage.jsp");
 	commands.put("login", new LoginCommand(roles, "/login/login.jsp"));
 	commands.put("logout", new LogoutCommand("/all/main.jsp", Arrays.asList(SecurityRole.All)));
 
-	//commands.put("customer-main", new ViewCurrentCustomerCommand("/customers/startCustomerPage.jsp", Arrays.asList(SecurityRole.Customer)));
-	//commands.put("showcustdetails", new ViewCurrentCustomerCommand("/customers/customerDetails.jsp", Arrays.asList(SecurityRole.Customer)));
 
-//	commands.put("viewcustomer", new ViewCustomerCommand("/employees/viewCustomer.jsp", Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee)));
 	commands.put("employee-main", new TargetCommand("employee/startEmployeePage.jsp", Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee)));
 
-//	commands.put("addcustomer", new AddCustomerCommand("/superEmployee/addCustomer.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
-//	commands.put("save-customer", new SaveCustomerCommand("/superEmployee/addCustomer.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
+	commands.put("create-customer", new TargetCommand("/superEmployee/customer-edit.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
+	commands.put("save-customer", new SaveCustomerCommand("/employee/customer-list.jsp",Arrays.asList(SecurityRole.SuperEmployee)));
+	commands.put("add-account", new EditAccountCommand("/superEmployee/account-edit.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
+	commands.put("edit-customer", new EditCustomerCommand("/superEmployee/customer-edit.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
+	commands.put("save-account", new AddAccountCommand("/employee/account-list.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
 	
 	commands.put("list-customers",new ListCustomersCommand("employee/customer-list.jsp", Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee)));
 	commands.put("list-accounts",new ListAccountsCommand("employee/account-list.jsp",Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee, SecurityRole.Employee)));
 	commands.put("detail-account", new ListAccountDetailCommand("employee/account-detail.jsp",Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee, SecurityRole.Employee)));
 	commands.put("edit-transfer", new EditTransferCommand("employee/transfer-edit.jsp",Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee, SecurityRole.Employee)));
-	commands.put("detail-account-transaction", new TransferCommand("employyeaccount-detail.jsp",Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee, SecurityRole.Employee)));
+	commands.put("detail-account-transaction", new TransferCommand("employee/account-detail.jsp",Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee, SecurityRole.Employee)));
     }
     
     public static Factory getInstance(){

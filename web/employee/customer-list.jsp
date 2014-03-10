@@ -17,20 +17,23 @@
 	<div id="header">
 	    <img src="images/logo.jpg" alt="logo">
 	    <ul>
+		<c:if test="${pageContext.request.isUserInRole('Employee')==true||
+			      pageContext.request.isUserInRole('SuperEmployee')==true}">
 		<li>
 		    <a href="Controller?command=employee-main">| Back to mainpage |</a>
 		</li>
+		</c:if>
 	    </ul>
 	</div>
 	<div id="main">
         <h3>Customers List</h3>
 	<table border="0px">
 	    <tr>
-		<th>Person Number</th><th>Name</th><th>Address</th><th>Phone Number</th><th>Email</th>
+		<th>Person Number</th><th>Name</th><th>Address</th><th>Phone Number</th><th>Email</th><th></th>
 	    </tr>
 	    <c:forEach var="customer" items="${customers}">
 		<tr><td><a href="Controller?cpr=${customer.cpr}&command=list-accounts">${customer.cpr} </a></td>
-		    <td> ${customer.name}</td> <td>${customer.address}</td> <td> ${customer.phone} </td><td> ${customer.email} </td>
+		    <td> ${customer.name}</td> <td>${customer.address}</td> <td> ${customer.phone} </td><td> ${customer.email} </td><td><a href="Controller?cpr=${customer.cpr}&command=edit-customer">Edit</td>
 		</tr> 
 	    </c:forEach>
 	</table>
