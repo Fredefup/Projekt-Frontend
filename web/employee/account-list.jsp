@@ -19,7 +19,9 @@
 	<ul>
 	    <li>
 	    <a href="Controller?cpr=${customer.cpr}&command=edit-transfer">| Make transfer |</a>
+	    <c:if test="${ pageContext.request.isUserInRole('SuperEmployee')==true}">
 	    <a href="Controller?cpr=${customer.cpr}&command=add-account">| Add Account |</a>
+	    </c:if>
 	    <a href="Controller?command=employee-main">| Back to mainpage |</a>
 	    </li>
 	</ul>
