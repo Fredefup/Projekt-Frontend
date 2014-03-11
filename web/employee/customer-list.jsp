@@ -19,6 +19,7 @@
 	    <ul>
 		<li>
 		    <a href="Controller?command=employee-main">| Back to mainpage |</a>
+		    <a style="float: right; margin-right: 10px;" href="Controller?command=logout">| LogOut |</a>
 		</li>
 	    </ul>
 	</div>
@@ -31,7 +32,7 @@
 		<th>Address</th>
 		<th>Phone Number</th>
 		<th>Email</th>
-		<c:if test="${ pageContext.request.isUserInRole('SuperEmployee')==true}">
+		<c:if test="${ pageContext.request.isUserInRole('SuperEmployee')}">
 		<th></th>
 		</c:if>
 	    </tr>
