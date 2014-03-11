@@ -19,6 +19,7 @@
 	<ul>
 	    <li>
 	    <a href="Controller?command=employee-main">| Back to mainpage |</a>
+	    <a style="float: right; margin-right: 10px;" href="Controller?command=logout">| LogOut |</a>
 	    </li>
 	</ul>
 	</div>
@@ -33,7 +34,8 @@
 	</select>
 	Amount: <input type="text" name="amount" value="">
 	Target Account: <input type="text" name="targetAccount" value="">
-	<input type="submit" value="Make Transaction">
+	<input style="display: inline;" type="submit" value="Make Transaction">
+	<a id="cancel" href="Controller?cpr=${customer.cpr}&command=cancel-transaction"> Cancel </a>
 	<input type="hidden" name='command' value="detail-account-transaction">
 	</form>
 	</div>

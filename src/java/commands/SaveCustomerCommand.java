@@ -35,15 +35,14 @@ public class SaveCustomerCommand extends TargetCommand
 	    String cpr = req.getParameter("cpr");
 	    CustomerIdentifier customerid = CustomerIdentifier.fromString(cpr);
 	    CustomerDetail customer = manager.showCustomer(customerid);
-	    Person person = Person.find(cpr);
-	    person.setTitle(req.getParameter("title"));
-	    person.setFirstName(req.getParameter("fname"));
-	    person.setLastName(req.getParameter("lname"));
-	    person.setStreet(req.getParameter("address"));
-	    person.setPostalCode(req.getParameter("postcode"));
-	    person.setPostalDistrict(req.getParameter("city"));
-	    person.setPhone(req.getParameter("phone"));
-	    person.setEmail(req.getParameter("email"));
+	    customer.setTitle(req.getParameter("title"));
+	    customer.setFirstName(req.getParameter("fname"));
+	    customer.setLastName(req.getParameter("lname"));
+	    customer.setStreet(req.getParameter("address"));
+	    customer.setPostalCode(req.getParameter("postcode"));
+	    customer.setPostalDistrict(req.getParameter("city"));
+	    customer.setPhone(req.getParameter("phone"));
+	    customer.setEmail(req.getParameter("email"));
 	    
 	    Collection<CustomerSummary> customers = manager.listCustomers();
 	    req.setAttribute("customers", customers);

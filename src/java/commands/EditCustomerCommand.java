@@ -10,7 +10,6 @@ import controllers.Factory;
 import dk.cphbusiness.bank.contract.BankManager;
 import dk.cphbusiness.bank.contract.dto.CustomerDetail;
 import dk.cphbusiness.bank.contract.dto.CustomerIdentifier;
-import dk.cphbusiness.bank.contract.dto.CustomerSummary;
 import dk.cphbusiness.bank.contract.eto.NoSuchCustomerException;
 import java.util.List;
 import java.util.logging.Level;

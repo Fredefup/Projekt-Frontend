@@ -8,8 +8,6 @@ package commands;
 
 import controllers.Factory;
 import dk.cphbusiness.bank.contract.BankManager;
-import dk.cphbusiness.bank.contract.dto.AccountSummary;
-import dk.cphbusiness.bank.contract.dto.CustomerIdentifier;
 import dk.cphbusiness.bank.contract.dto.CustomerSummary;
 import java.util.Collection;
 import java.util.List;

@@ -12,13 +12,14 @@
 	    <img src="images/logo.jpg" alt="logo">
 	    <ul>
 		<li>
-		    <c:if test="${pageContext.request.isUserInRole('Employee')==true || 
-                    pageContext.request.isUserInRole('SuperEmployee')==true}">
-		    <a href="Controller?command=list-customers">| List Customers |</a>
+		    <c:if test="${pageContext.request.isUserInRole('Employee') || 
+				  pageContext.request.isUserInRole('SuperEmployee')}">
+			  <a href="Controller?command=list-customers">| List Customers |</a>
 		    </c:if>
-		    <c:if test="${ pageContext.request.isUserInRole('SuperEmployee')==true}">
-		    <a href="Controller?command=create-customer">| Add Customer |</a>
+		    <c:if test="${ pageContext.request.isUserInRole('SuperEmployee')}">
+			<a href="Controller?command=create-customer">| Add Customer |</a>
 		    </c:if>
+			<a style="float: right; margin-right: 10px;" href="Controller?command=logout">| LogOut |</a>
 		</li>
 	    </ul>
 	</div>

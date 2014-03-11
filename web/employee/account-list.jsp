@@ -23,6 +23,7 @@
 	    <a href="Controller?cpr=${customer.cpr}&command=add-account">| Add Account |</a>
 	    </c:if>
 	    <a href="Controller?command=employee-main">| Back to mainpage |</a>
+	    <a style="float: right; margin-right: 10px;" href="Controller?command=logout">| LogOut |</a>
 	    </li>
 	</ul>
 	</div>

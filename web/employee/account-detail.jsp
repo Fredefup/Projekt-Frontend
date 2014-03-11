@@ -16,36 +16,38 @@
     <body>
 	<div id="header">
 	    <img src="images/logo.jpg" alt="logo">
-	<ul>
-	    <li>
-		<a href="Controller?cpr=${customer.cpr}&command=edit-transfer">| Make transfer |</a>
-	    <a href="Controller?command=employee-main">| Back to mainpage |</a>
-	    </li>
-	</ul>
+	    <a style="float: left" href="Controller?command=logout">| LogOut |</a>
+	    <ul>
+		<li>
+		    <a href="Controller?cpr=${customer.cpr}&command=edit-transfer">| Make transfer |</a>
+		    <a href="Controller?command=employee-main">| Back to mainpage |</a>
+		    <a style="float: right; margin-right: 10px;" href="Controller?command=logout">| LogOut |</a>
+		</li>
+	    </ul>
 	</div>
 	<div id="main">
-        <h3>Account Details</h3>
-	<input type="hidden" name="cpr" value="${customer.cpr}">
-	<table>
-	<th>Account</th><th>Interest</th><th>Type</th>
-	<tr>
-	    <td>${account.number}</td>
-	    <td>${account.interest}</td>
-	    <td>${account.type}</td>
-	</tr>
-	</table>
-	<table>
-	    <tr>
-		<th>Date</th><th>Amount</th><th>Destination</th>
-	    </tr>
-	    <c:forEach var="transfer" items="${account.transfers}">
+	    <h3>Account Details</h3>
+	    <input type="hidden" name="cpr" value="${customer.cpr}">
+	    <table>
+		<th>Account</th><th>Interest</th><th>Type</th>
 		<tr>
-		    <td>${transfer.date}</td>
-		    <td>${transfer.amount}</td>
-		    <td>${transfer.accountNumber}</td>
+		    <td>${account.number}</td>
+		    <td>${account.interest}</td>
+		    <td>${account.type}</td>
 		</tr>
-	    </c:forEach>
-	</table>
+	    </table>
+	    <table>
+		<tr>
+		    <th>Date</th><th>Amount</th><th>Destination</th>
+		</tr>
+		<c:forEach var="transfer" items="${account.transfers}">
+		    <tr>
+			<td>${transfer.date}</td>
+			<td>${transfer.amount}</td>
+			<td>${transfer.accountNumber}</td>
+		    </tr>
+		</c:forEach>
+	    </table>
 	</div>
     </body>
 </html>

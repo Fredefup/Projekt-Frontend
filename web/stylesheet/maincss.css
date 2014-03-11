@@ -18,6 +18,11 @@ body{
 table{text-align: left;}
 th{color:crimson; background-color: beige;}
 
+#cancel{
+    color: grey;
+    font-weight: normal;
+}
+
 a:link{color: crimson;font-weight: bold;text-decoration:none;}
 a:visited{color: crimson;font-weight: bold; text-decoration:none;}
 a:hover{color: crimson;background-color: cornsilk; text-decoration:none;}

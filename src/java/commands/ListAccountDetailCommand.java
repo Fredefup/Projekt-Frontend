@@ -11,8 +11,6 @@ import dk.cphbusiness.bank.contract.BankManager;
 import dk.cphbusiness.bank.contract.dto.AccountDetail;
 import dk.cphbusiness.bank.contract.dto.AccountIdentifier;
 import dk.cphbusiness.bank.contract.dto.CustomerIdentifier;
-import dk.cphbusiness.bank.contract.dto.TransferSummary;
-import java.util.Collection;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import security.SecurityRole;

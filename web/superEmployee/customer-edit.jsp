@@ -12,6 +12,12 @@
     <body>
 	<div id="header">
 	    <img src="images/logo.jpg" alt="logo">
+	    <ul>
+		<li>
+		    <a href="Controller?command=employee-main">| Back to mainpage |</a>
+		    <a style="float: right; margin-right: 10px;" href="Controller?command=logout">| LogOut |</a>
+		</li>
+	    </ul>
 	</div>
 	<div id="main">
 	    <h3>Customer Details</h3>
