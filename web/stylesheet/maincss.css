@@ -7,6 +7,20 @@ and open the template in the editor.
     Created on : Mar 5, 2014, 8:50:28 AM
     Author     : Ahmed Sadiq
 */
+#loginlink{
+    text-align: right;
+    font-size: 10px;
+    margin-right: 20px;
+}
+
+#logout{
+    font-size: 10px;
+    float: right; 
+    margin-right: 10px;
+    color: grey;
+    font-weight: normal;
+}
+
 body{
     margin:0px;
     background-image:url(../images/background.jpg);
@@ -28,7 +42,7 @@ a:visited{color: crimson;font-weight: bold; text-decoration:none;}
 a:hover{color: crimson;background-color: cornsilk; text-decoration:none;}
 a:active{color: crimson;background-color: cornsilk; text-decoration:none;}
 
-img{width: 20%; height: 18%}
+img{width: 20%; height: 18%;}
 
 h3{color: crimson;}
 
@@ -41,9 +55,10 @@ h3{color: crimson;}
     margin-left: 50px;
     padding-left: 50px;
 }
+
 ul
 {
-    text-align: left; list-style-type: none;
+    background-color: beige;  text-align: left; list-style-type: none;
 }
 p{
     color:crimson;

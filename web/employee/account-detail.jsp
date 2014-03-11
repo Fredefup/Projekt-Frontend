@@ -19,9 +19,9 @@
 	    <a style="float: left" href="Controller?command=logout">| LogOut |</a>
 	    <ul>
 		<li>
-		    <a href="Controller?cpr=${customer.cpr}&command=edit-transfer">| Make transfer |</a>
-		    <a href="Controller?command=employee-main">| Back to mainpage |</a>
-		    <a style="float: right; margin-right: 10px;" href="Controller?command=logout">| LogOut |</a>
+		    <a id="link" href="Controller?cpr=${customer.cpr}&command=edit-transfer">| Make transfer |</a>
+		    <a id="link" href="Controller?command=employee-main">| Back to mainpage |</a>
+		    <a id="logout" href="Controller?command=logout">LOGOUT</a>
 		</li>
 	    </ul>
 	</div>

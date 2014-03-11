@@ -18,8 +18,8 @@
 	    <img src="images/logo.jpg" alt="logo">
 	    <ul>
 		<li>
-		    <a href="Controller?command=employee-main">| Back to mainpage |</a>
-		    <a style="float: right; margin-right: 10px;" href="Controller?command=logout">| LogOut |</a>
+		    <a id="link" href="Controller?command=employee-main">| Back to mainpage |</a>
+		    <a id="logout" href="Controller?command=logout">LOGOUT</a>
 		</li>
 	    </ul>
 	</div>
@@ -37,13 +37,13 @@
 		</c:if>
 	    </tr>
 	    <c:forEach var="customer" items="${customers}">
-		<tr><td><a href="Controller?cpr=${customer.cpr}&command=list-accounts">${customer.cpr} </a></td>
+		<tr><td><a id="link" href="Controller?cpr=${customer.cpr}&command=list-accounts">${customer.cpr} </a></td>
 		    <td> ${customer.name}</td> 
 		    <td>${customer.address}</td>
 		    <td> ${customer.phone} </td>
 		    <td> ${customer.email} </td>
 		    <c:if test="${ pageContext.request.isUserInRole('SuperEmployee')==true}">
-		    <td><a href="Controller?cpr=${customer.cpr}&command=edit-customer">Edit</td>
+		    <td><a id="link" href="Controller?cpr=${customer.cpr}&command=edit-customer">Edit</td>
 		    </c:if>
 		</tr> 
 	    </c:forEach>

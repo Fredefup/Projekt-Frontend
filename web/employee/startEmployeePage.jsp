@@ -14,12 +14,12 @@
 		<li>
 		    <c:if test="${pageContext.request.isUserInRole('Employee') || 
 				  pageContext.request.isUserInRole('SuperEmployee')}">
-			  <a href="Controller?command=list-customers">| List Customers |</a>
+			  <a id="link" href="Controller?command=list-customers">| List Customers |</a>
 		    </c:if>
 		    <c:if test="${ pageContext.request.isUserInRole('SuperEmployee')}">
-			<a href="Controller?command=create-customer">| Add Customer |</a>
+			<a id="link" href="Controller?command=create-customer">| Add Customer |</a>
 		    </c:if>
-			<a style="float: right; margin-right: 10px;" href="Controller?command=logout">| LogOut |</a>
+			<a id="logout" href="Controller?command=logout"> LOGOUT </a>
 		</li>
 	    </ul>
 	</div>

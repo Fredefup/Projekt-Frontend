@@ -18,12 +18,12 @@
 	    <img src="images/logo.jpg" alt="logo">
 	<ul>
 	    <li>
-	    <a href="Controller?cpr=${customer.cpr}&command=edit-transfer">| Make transfer |</a>
+	    <a id="link" href="Controller?cpr=${customer.cpr}&command=edit-transfer">| Make transfer |</a>
 	    <c:if test="${ pageContext.request.isUserInRole('SuperEmployee')==true}">
-	    <a href="Controller?cpr=${customer.cpr}&command=add-account">| Add Account |</a>
+	    <a id="link" href="Controller?cpr=${customer.cpr}&command=add-account">| Add Account |</a>
 	    </c:if>
-	    <a href="Controller?command=employee-main">| Back to mainpage |</a>
-	    <a style="float: right; margin-right: 10px;" href="Controller?command=logout">| LogOut |</a>
+	    <a id="link" href="Controller?command=employee-main">| Back to mainpage |</a>
+	    <a id="logout" href="Controller?command=logout">LOGOUT</a>
 	    </li>
 	</ul>
 	</div>
@@ -36,7 +36,7 @@
 	</tr>
     <c:forEach var="account" items="${accounts}">
 	<tr>
-	<td><a href="Controller?cpr=${customer.cpr}&accountNr=${account.number}&command=detail-account">${account.number}</a></td>
+	<td><a id="link" href="Controller?cpr=${customer.cpr}&accountNr=${account.number}&command=detail-account">${account.number}</a></td>
 	<td>${account.type}</td></tr>
     </c:forEach>
 	</table>

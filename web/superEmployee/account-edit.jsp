@@ -20,8 +20,8 @@
 	    <img src="images/logo.jpg" alt="logo">
 	    <ul>
 		<li>
-		    <a href="Controller?command=employee-main">| Back to mainpage |</a>
-		    <a style="float: right; margin-right: 10px;" href="Controller?command=logout">| LogOut |</a>
+		    <a id="link" href="Controller?command=employee-main">| Back to mainpage |</a>
+		    <a id="logout" href="Controller?command=logout">| LogOut |</a>
 		</li>
 	    </ul>
 	</div>

@@ -14,10 +14,10 @@
     </head>
     <body>
 	<div id="header">
-	    <img src="images/logo.jpg" alt="logo">
+	    <img src="images/logo.jpg" alt="logo"> 
 	    <ul>
-		<li>
-		    <a href="Controller?command=showlogin">| Login |</a>
+		<li id="loginlink" >
+		    <a href="Controller?command=showlogin"> LOGIN </a>
 		</li>
 	    </ul>
 	</div>
