@@ -68,6 +68,7 @@ public class Factory
 	commands.put("detail-account", new ListAccountDetailCommand("employee/account-detail.jsp",Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee, SecurityRole.Employee)));
 	commands.put("edit-transfer", new EditTransferCommand("employee/transfer-edit.jsp",Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee, SecurityRole.Employee)));
 	commands.put("detail-account-transaction", new TransferCommand("employee/account-detail.jsp",Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee, SecurityRole.Employee)));
+	commands.put("cancel-transaction", new ListCustomersCommand("employee/customer-list.jsp",Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee, SecurityRole.Employee)));
     }
     
     public static Factory getInstance(){
