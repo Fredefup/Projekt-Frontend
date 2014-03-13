@@ -3,6 +3,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <%@include file="../WEB-INF/jspf/header.jspf" %>
         <title>Details for ${pageContext.request.remoteUser}</title>
     </head>
     <body>
@@ -10,9 +11,6 @@
         <p>${customer.firstName}</p>
         <p>${customer.lastName}</p>
         <p>${customer.email}</p>
-        <ul>
-          <li><a href='Controller?command=main'>Back to main page</a></li>
-          <li><a href="Controller?command=customer-main">Customer main page</a></li>
-        </ul>
+        
     </body>
 </html>

@@ -10,18 +10,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<LINK href="stylesheet/maincss.css" rel="stylesheet" type="text/css">
+        <%@include file="../WEB-INF/jspf/header.jspf" %>
         <title>OneBank</title>
     </head>
     <body>
-	<div id="header">
-	    <img src="images/logo.jpg" alt="logo"> 
-	    <ul>
-		<li id="loginlink" >
-		    <a href="Controller?command=showlogin"> LOGIN </a>
-		</li>
-	    </ul>
-	</div>
-	<div id="main">
+	
 	    <p>OneBank eBanking makes your day more flexible because you can go to the bank whenever it suits you – and we have OneBank eBanking in English.</p>
 
 		<p>Save time and money<br>
@@ -32,6 +25,6 @@
 
 		<p>No more paper bills and piles of paper<br>
 		Tired of receiving bills in the mail? Get your bills directly via eBanking.<br> You will get a better overview of your financial situation and help reduce paper consumption.</p>
-	</div>
+	
     </body>
 </html>

@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@include file="../WEB-INF/jspf/header.jspf" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,15 +15,7 @@
         <title>Customers List</title>
     </head>
     <body>
-	<div id="header">
-	    <img src="images/logo.jpg" alt="logo">
-	    <ul>
-		<li>
-		    <a id="link" href="Controller?command=employee-main">| Back to mainpage |</a>
-		    <a id="logout" href="Controller?command=logout">LOGOUT</a>
-		</li>
-	    </ul>
-	</div>
+	
 	<div id="main">
         <h3>Customers List</h3>
 	<table border="0px">

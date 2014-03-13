@@ -17,6 +17,7 @@ import commands.ListCustomersCommand;
 import commands.LoginCommand;
 import commands.LogoutCommand;
 import commands.SaveCustomerCommand;
+import commands.SayHelloCommand;
 import commands.ShowLoginCommand;
 import commands.TargetCommand;
 import commands.TransferCommand;
@@ -26,6 +27,11 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
 import javax.servlet.http.HttpServletRequest;
 import security.SecurityRole;
 
@@ -35,22 +41,26 @@ import security.SecurityRole;
  */
 public class Factory
 {
+    BankManager bankManagerBean = lookupBankManagerBeanRemote();
     private static Factory instance = null;
      private final Map<String,Command> commands = new HashMap<>();
     private final BankManager manager;
     
     private Factory(){
-	manager = new DummyBankManager();
-	
+//	manager = new DummyBankManager();
+	manager = lookupBankManagerBeanRemote();
 	commands.put("back",new TargetCommand("all/main.jsp",Arrays.asList(SecurityRole.All)));
 	commands.put("main", new TargetCommand("all/main.jsp",Arrays.asList(SecurityRole.All)));
 	commands.put("showlogin", new ShowLoginCommand("/login/login.jsp", Arrays.asList(SecurityRole.All)));
-	
+	commands.put("hello", new SayHelloCommand("all/hello.jsp",Arrays.asList(SecurityRole.All)));
+                
 	
 	Map<SecurityRole, String> roles = new HashMap();
-	roles.put(SecurityRole.Employee, "/employee/startEmployeePage.jsp");
-	roles.put(SecurityRole.SuperEmployee, "/employee/startEmployeePage.jsp");
-	roles.put(SecurityRole.Customer, "/customer/startCustomerPage.jsp");
+	roles.put(SecurityRole.All, "/all/frontPage.jsp");
+	roles.put(SecurityRole.SuperEmployee, "/all/frontPage.jsp");
+	roles.put(SecurityRole.Employee, "/all/frontPage.jsp");
+	roles.put(SecurityRole.Customer, "/all/frontPage.jsp");
+
 	commands.put("login", new LoginCommand(roles, "/login/login.jsp"));
 	commands.put("logout", new LogoutCommand("/all/main.jsp", Arrays.asList(SecurityRole.All)));
 
@@ -104,5 +114,15 @@ public class Factory
 		throw new SecurityException("You don't have the necessary rights to perform this command");
 	    }
 	}
+    }
+
+    private BankManager lookupBankManagerBeanRemote() {
+        try {
+            Context c = new InitialContext();
+            return (BankManager) c.lookup("java:global/BankBackendB/BankManagerBean!dk.cphbusiness.bank.contract.BankManager");
+        } catch (NamingException ne) {
+            Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
+            throw new RuntimeException(ne);
+        }
     }
 }

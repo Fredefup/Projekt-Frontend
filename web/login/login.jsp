@@ -4,6 +4,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <LINK href="stylesheet/maincss.css" rel="stylesheet" type="text/css">
+    <%@include file="../WEB-INF/jspf/header.jspf" %>
     <style>
       label {display: block;width: 8em;text-align: left;float: left;}
       #login {margin-left: auto;margin-right:auto ;margin-top :2em;width:20em;}
@@ -11,13 +12,7 @@
     <title>Login Page</title>
   </head>
   <body>
-      <div id="header">
-	    <img src="images/logo.jpg" alt="logo">
-	    <ul>
-		<li>
-		</li>
-	    </ul>
-	</div>
+     
     <fieldset id='login'>
       <legend>Login</legend>
       <form method="POST" action="Controller">

@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@include file="../WEB-INF/jspf/header.jspf" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,17 +15,7 @@
         <title>Account Details</title>
     </head>
     <body>
-	<div id="header">
-	    <img src="images/logo.jpg" alt="logo">
-	    <a style="float: left" href="Controller?command=logout">| LogOut |</a>
-	    <ul>
-		<li>
-		    <a id="link" href="Controller?cpr=${customer.cpr}&command=edit-transfer">| Make transfer |</a>
-		    <a id="link" href="Controller?command=employee-main">| Back to mainpage |</a>
-		    <a id="logout" href="Controller?command=logout">LOGOUT</a>
-		</li>
-	    </ul>
-	</div>
+	
 	<div id="main">
 	    <h3>Account Details</h3>
 	    <input type="hidden" name="cpr" value="${customer.cpr}">
