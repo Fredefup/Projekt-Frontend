@@ -47,8 +47,8 @@ public class Factory
     private final BankManager manager;
     
     private Factory(){
-//	manager = new DummyBankManager();
-	manager = lookupBankManagerBeanRemote();
+	manager = new DummyBankManager();
+//	manager = lookupBankManagerBeanRemote();
 	commands.put("back",new TargetCommand("all/main.jsp",Arrays.asList(SecurityRole.All)));
 	commands.put("main", new TargetCommand("all/main.jsp",Arrays.asList(SecurityRole.All)));
 	commands.put("showlogin", new ShowLoginCommand("/login/login.jsp", Arrays.asList(SecurityRole.All)));

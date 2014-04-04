@@ -32,9 +32,10 @@ public class ListAccountsCommand extends TargetCommand
     @Override
     public String execute(HttpServletRequest req)
     {
+        
 	BankManager manager = Factory.getInstance().getManager();
 	CustomerIdentifier customer = CustomerIdentifier.fromString(req.getParameter("cpr"));
-	Collection<AccountSummary> accounts = manager.listCustomerAccounts(customer);
+	Collection<AccountSummary> accounts = manager.listAccounts();
 	
 	req.setAttribute("accounts", accounts);
 	req.setAttribute("customer", customer);
