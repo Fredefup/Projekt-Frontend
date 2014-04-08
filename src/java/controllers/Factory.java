@@ -41,7 +41,7 @@ import security.SecurityRole;
  */
 public class Factory
 {
-    BankManager bankManagerBean = lookupBankManagerBeanRemote();
+//    BankManager bankManagerBean = lookupBankManagerBeanRemote();
     private static Factory instance = null;
      private final Map<String,Command> commands = new HashMap<>();
     private final BankManager manager;

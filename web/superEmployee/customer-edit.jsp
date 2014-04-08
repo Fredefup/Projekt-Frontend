@@ -19,9 +19,9 @@
         border:1px solid red;
       }
     </style>
-        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="jq/jquery-1.9.1.js"></script>
         <!--    <script src="js/jquery.validate.js"></script>-->
-        <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>
+        <script src="jq/jqueryValidation.js"></script>
         <script>
             $(document).ready(function() {
                 // validate the comment form when it is submitted
