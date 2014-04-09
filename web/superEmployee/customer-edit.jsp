@@ -24,6 +24,28 @@
         <script src="jq/jqueryValidation.js"></script>
         <script>
             $(document).ready(function() {
+             
+        $("#getinfofromphone").click(function(){
+            getInfo();
+        });
+            
+            function getInfo() {
+                $.ajax({
+                    url: "AutoFill",
+                    cache: false,
+                    data: { phone: $("#phone").val()},
+                    dataType: "json"
+                }).done(function(data) {
+                    $("#firstname").val(data.firstName);
+                    $("#lastname").val(data.lastName);
+                    $("#mail").val(data.email);
+                    $("#city").val(data.city);
+                    $("#address").val(data.address);
+                    $("#postcode").val(data.zip);
+                });
+            }
+        
+                
                 // validate the comment form when it is submitted
                 $("#myform").validate({
                     rules: {
@@ -79,8 +101,8 @@
                             
                         }
                     }
-//                    ,
-//                    errorLabelContainer: "#errors", wrapper: "div"
+                    ,
+                    errorLabelContainer: "#errors"
                 });
             });
         </script>
@@ -125,6 +147,7 @@
                 <p>   
                     <label for="phone">Phone</label>
                     <input type="text" name="phone" id="phone" value="${customer.phone}"/>
+                    <button id="getinfofromphone"> Search </button>
                 </p>
                 <p> 
                     <label for="pw">Password</label>
@@ -140,7 +163,10 @@
                     <input type="hidden" name="command" value="save-customer">
 		<br/>
 		<input type="submit" value="Save" style="margin-left: 240px;">
-                </p>
+                 </p>
+                <div id="data"></div>
+                
+               
             </form>
             <div id="errors" class="fs2" style="border : red solid thin;"></div>
             <br/>
