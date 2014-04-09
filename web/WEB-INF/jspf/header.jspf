@@ -18,7 +18,7 @@
                 
                     <c:if test="${pageContext.request.userPrincipal == null}">
                     <li class="login">
-                        <a id="loginlink" href="Controller?command=showlogin" >Login</a></li>
+                        <a id="loginlink" href="Controller?command=showlogin" >LOGIN</a></li>
       
                     </c:if>    
 
@@ -28,7 +28,7 @@
                     <li>
                     <a href='Controller?command=showcustdetails'> |Show details| </a>
                     <a href='Controller?command=main'> |Back to main page| </a>
-                    <a id="logout" href="Controller?command=logout"> |Logout| </a></li>
+                    <a id="logout" href="Controller?command=logout"> LOGOUT </a></li>
                     
 
                 </c:if>
@@ -40,7 +40,7 @@
                     <li>
                         <a id="link" href="Controller?command=list-customers"> |List Customers| </a>
                         <a href='Controller?command=main'>  |Back to main page| </a>
-                        <a id="logout" href="Controller?command=logout">  |Logout| </a>
+                        <a id="logout" href="Controller?command=logout"> LOGOUT </a>
                     </li>
 
                 </c:if>
@@ -51,7 +51,7 @@
                     <li><a href="Controller?command=list-customers"> |List Customers| </a>
                         <a id="link" href="Controller?command=create-customer"> |Add Customer| </a>
                         <a href='Controller?command=main'>|Back to main page| </a>
-                        <a id="logout" href="Controller?command=logout"> |Logout| </a>
+                        <a id="logout" href="Controller?command=logout"> LOGOUT </a>
                     </li>
                 </c:if>
 
