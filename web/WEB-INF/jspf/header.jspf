@@ -24,7 +24,8 @@
 
                 <!----------------------------------user menu-->
                 <c:if test="${pageContext.request.isUserInRole('Customer')==true}">
-                    <li> Welcome ${pageContext.request.remoteUser}</li>
+		    <li id="user">${pageContext.request.remoteUser}</li>
+		    
                     <li>
                     <a href='Controller?command=showcustdetails'> |Show details| </a>
                     <a href='Controller?command=main'> |Back to main page| </a>
@@ -34,9 +35,7 @@
                 </c:if>
                 <!----------------------------------employee menu-->
                 <c:if test="${pageContext.request.isUserInRole('Employee')==true}">
-                    <li> Welcome ${pageContext.request.remoteUser}</li>
-                    
-
+		    <li id="user">${pageContext.request.remoteUser}</li>
                     <li>
                         <a id="link" href="Controller?command=list-customers"> |List Customers| </a>
                         <a href='Controller?command=main'>  |Back to main page| </a>
@@ -46,8 +45,8 @@
                 </c:if>
                 <!----------------------------------SuperEmployee menu-->
                 <c:if test="${pageContext.request.isUserInRole('SuperEmployee')==true}">
-                    <li> Welcome ${pageContext.request.remoteUser}</li>
-
+		    <li id="user">${pageContext.request.remoteUser}</li>
+		    <li><br></li>
                     <li><a href="Controller?command=list-customers"> |List Customers| </a>
                         <a id="link" href="Controller?command=create-customer"> |Add Customer| </a>
                         <a href='Controller?command=main'>|Back to main page| </a>
