@@ -21,6 +21,13 @@ and open the template in the editor.
     font-weight: normal;
 }
 
+#user{
+    float: right; 
+    margin-right: 10px;
+    color: crimson;
+    font-weight: normal;
+}
+
 body{
     margin:0px;
     background-image:url(../images/background.jpg);
