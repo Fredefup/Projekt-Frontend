@@ -13,50 +13,49 @@
         <div id="menu" class="menu">  
             <div id="header">
                 <img src="images/logo.jpg" alt="logo">
-            
-            <ul id="headermenu">          
-                
+
+		<ul id="headermenu">          
                     <c:if test="${pageContext.request.userPrincipal == null}">
-                    <li class="login">
-                        <a id="loginlink" href="Controller?command=showlogin" >LOGIN</a></li>
-      
+			<li class="login">
+			    <a id="loginlink" href="Controller?command=showlogin" >LOGIN</a></li>
+
                     </c:if>    
 
-                <!----------------------------------user menu-->
-                <c:if test="${pageContext.request.isUserInRole('Customer')==true}">
-		    <li id="user">${pageContext.request.remoteUser}</li>
-		    
-                    <li>
-                    <a href='Controller?command=showcustdetails'> | Show details | </a>
-                    <a href='Controller?command=main'> | Back to main page | </a>
-                    <a id="logout" href="Controller?command=logout"> LOGOUT </a></li>
-                    
+		    <!----------------------------------user menu-->
+		    <c:if test="${pageContext.request.isUserInRole('Customer')==true}">
+			<li id="user">${pageContext.request.remoteUser}</li>
 
-                </c:if>
-                <!----------------------------------employee menu-->
-                <c:if test="${pageContext.request.isUserInRole('Employee')==true}">
-		    <li id="user">${pageContext.request.remoteUser}</li>
-                    <li>
-                        <a id="link" href="Controller?command=list-customers"> | List Customers | </a>
-                        <a href='Controller?command=main'>  | Back to main page | </a>
-                        <a id="logout" href="Controller?command=logout"> LOGOUT </a>
-                    </li>
-
-                </c:if>
-                <!----------------------------------SuperEmployee menu-->
-                <c:if test="${pageContext.request.isUserInRole('SuperEmployee')==true}">
-		    <li id="user">${pageContext.request.remoteUser}</li>
-		    <li><br></li>
-                    <li><a href="Controller?command=list-customers"> | List Customers | </a>
-                        <a id="link" href="Controller?command=create-customer"> | Add Customer | </a>
-                        <a href='Controller?command=main'>| Back to main page | </a>
-                        <a id="logout" href="Controller?command=logout"> LOGOUT </a>
-                    </li>
-                </c:if>
+			<li>
+			    <a href='Controller?command=showcustdetails'> | Show details | </a>
+			    <a href='Controller?command=main'> | Back to main page | </a>
+			    <a id="logout" href="Controller?command=logout"> LOGOUT </a></li>
 
 
-            </ul>
-                </div>
+		    </c:if>
+		    <!----------------------------------employee menu-->
+		    <c:if test="${pageContext.request.isUserInRole('Employee')==true}">
+			<li id="user">${pageContext.request.remoteUser}</li>
+			<li>
+			    <a id="link" href="Controller?command=list-customers"> | List Customers | </a>
+			    <a href='Controller?command=main'>  | Back to main page | </a>
+			    <a id="logout" href="Controller?command=logout"> LOGOUT </a>
+			</li>
+
+		    </c:if>
+		    <!----------------------------------SuperEmployee menu-->
+		    <c:if test="${pageContext.request.isUserInRole('SuperEmployee')==true}">
+			<li id="user">${pageContext.request.remoteUser}</li>
+			<li><br></li>
+			<li><a href="Controller?command=list-customers"> | List Customers | </a>
+			    <a id="link" href="Controller?command=create-customer"> | Add Customer | </a>
+			    <a href='Controller?command=main'>| Back to main page | </a>
+			    <a id="logout" href="Controller?command=logout"> LOGOUT </a>
+			</li>
+		    </c:if>
+
+
+		</ul>
+	    </div>
         </div>
         <br>
         <div class="page">

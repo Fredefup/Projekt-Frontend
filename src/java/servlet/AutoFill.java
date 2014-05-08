@@ -64,7 +64,7 @@ public class AutoFill extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("application/json;charset=UTF-8");
-        String server = "http://datdb.cphbusiness.dk:8080/KrakRemote";
+        String server = "http://localhost:8080/WannabeKrakB";
         String restResource = "/service/person/";
         String mime = "application/json";
         String parameter = request.getParameter("phone");

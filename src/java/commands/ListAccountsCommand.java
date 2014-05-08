@@ -35,7 +35,7 @@ public class ListAccountsCommand extends TargetCommand
         
 	BankManager manager = Factory.getInstance().getManager();
 	CustomerIdentifier customer = CustomerIdentifier.fromString(req.getParameter("cpr"));
-	Collection<AccountSummary> accounts = manager.listAccounts();
+	Collection<AccountSummary> accounts = manager.listCustomerAccounts(customer);
 	
 	req.setAttribute("accounts", accounts);
 	req.setAttribute("customer", customer);

@@ -15,7 +15,7 @@
         <title>Account List</title>
     </head>
     <body>
-	
+	<div class="header">
 	<ul>
 	    <li>
 	    <a id="link" href="Controller?cpr=${customer.cpr}&command=edit-transfer">| Make transfer |</a>
@@ -24,7 +24,7 @@
 	    </c:if>
 	    </li>
 	</ul>
-	
+	</div>
 	<div id="main">
         <h3>Account List</h3>
 	<input type="hidden" name="cpr" value="${customer.cpr}">

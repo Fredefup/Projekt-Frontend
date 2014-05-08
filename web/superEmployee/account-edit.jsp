@@ -30,6 +30,5 @@
 		<a id="cancel" href="Controller?cpr=${customer.cpr}&command=cancel-transaction"> Cancel </a>
 	    </form>
 	    <br/>
-	</div>
     </body>
 </html>
