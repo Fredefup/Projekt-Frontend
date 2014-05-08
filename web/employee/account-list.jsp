@@ -34,7 +34,7 @@
 	</tr>
     <c:forEach var="account" items="${accounts}">
 	<tr>
-	<td><a id="link" href="Controller?cpr=${customer.cpr}&accountNr=${account.number}&command=detail-account">${account.number}</a></td>
+	<td><a id="link" href="Controller?cpr=${customer.cpr}&accountNr=${account.number}&command=detail-account">xxxx${account.number}</a></td>
 	<td>${account.type}</td></tr>
     </c:forEach>
 	</table>

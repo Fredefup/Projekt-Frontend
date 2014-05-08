@@ -50,6 +50,7 @@
 			    <a id="link" href="Controller?command=create-customer"> | Add Customer | </a>
 			    <a href='Controller?command=main'>| Back to main page | </a>
 			    <a id="logout" href="Controller?command=logout"> LOGOUT </a>
+                            <c:if test="${param.command == 'list-accounts'}">xyz</c:if>     ½
 			</li>
 		    </c:if>
 
