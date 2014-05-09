@@ -50,7 +50,16 @@
 			    <a id="link" href="Controller?command=create-customer"> | Add Customer | </a>
 			    <a href='Controller?command=main'>| Back to main page | </a>
 			    <a id="logout" href="Controller?command=logout"> LOGOUT </a>
-                            <c:if test="${param.command == 'list-accounts'}">xyz</c:if>     ½
+			    <c:if test="${param.command == 'detail-account'}">
+                           <a id="link" href="Controller?cpr=${customer.cpr}&command=edit-transfer">| Make transfer |</a>
+			    </c:if> 
+			   <c:if test="${param.command == 'list-accounts'}">
+				<c:if test="${ pageContext.request.isUserInRole('SuperEmployee')==true}">
+				    <a id="link" href="Controller?cpr=${customer.cpr}&command=edit-transfer">| Make transfer |</a>
+				    <a id="link" href="Controller?cpr=${customer.cpr}&command=add-account">| Add Account |</a>
+				</c:if>
+
+			    </c:if>
 			</li>
 		    </c:if>
 

@@ -16,14 +16,6 @@
     </head>
     <body>
 	<div class="header">
-	<ul>
-	    <li>
-	    <a id="link" href="Controller?cpr=${customer.cpr}&command=edit-transfer">| Make transfer |</a>
-	    <c:if test="${ pageContext.request.isUserInRole('SuperEmployee')==true}">
-	    <a id="link" href="Controller?cpr=${customer.cpr}&command=add-account">| Add Account |</a>
-	    </c:if>
-	    </li>
-	</ul>
 	</div>
 	<div id="main">
         <h3>Account List</h3>
@@ -34,7 +26,7 @@
 	</tr>
     <c:forEach var="account" items="${accounts}">
 	<tr>
-	<td><a id="link" href="Controller?cpr=${customer.cpr}&accountNr=${account.number}&command=detail-account">xxxx${account.number}</a></td>
+	<td><a id="link" href="Controller?cpr=${customer.cpr}&accountNr=${account.number}&command=detail-account">${account.number}</a></td>
 	<td>${account.type}</td></tr>
     </c:forEach>
 	</table>

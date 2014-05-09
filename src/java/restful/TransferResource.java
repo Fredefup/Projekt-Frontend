@@ -17,9 +17,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Consumes;
-import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -75,9 +73,9 @@ public class TransferResource {
             return resp;
         } catch (InsufficientFundsException ex) {
             TransferResponse resp = new TransferResponse(false, ex.getMessage());
-            Logger.getLogger(TransferResource.class.getName()).log(Level.SEVERE, null, ex);
+           Logger.getLogger(TransferResource.class.getName()).log(Level.SEVERE, null, ex);
             return resp;
-        }
+        } 
     }
 
 }
